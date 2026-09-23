@@ -1,22 +1,19 @@
 # UEM Labs Academy
 
-A polished, responsive frontend MVP for an online endpoint-management training platform.
+A responsive frontend MVP for an endpoint-management learning platform.
 
-## Included
+## New in this phase
 
-- Marketing landing page with responsive navigation
-- Course catalog with Android Enterprise, Workspace ONE, and Intune offerings
-- Student dashboard preview with progress and access-period messaging
-- Learning benefits, testimonial, and CTA sections
-- Functional sign-up/login modal and course CTA interactions
-- Mobile navigation and responsive layouts
+- Added `dashboard.html`, a student learning dashboard with active enrollments, progress, activity, streak, and access-expiration UI.
+- Added `dashboard.css` and `dashboard.js` for the responsive dashboard and demo interactions.
+- Added `database/schema.sql` with a Supabase/PostgreSQL model for profiles, courses, sections, lessons, enrollments, progress, access extensions, RLS, and course-access checks.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder with any static server:
+Open `index.html` or `dashboard.html` in a browser, or serve the folder:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-This is a frontend-only MVP. Supabase authentication, course data, enrollments, progress persistence, Stripe, and an admin dashboard can be connected in the next phase.
+The dashboard is currently demo data. To make it production-ready, create a Supabase project, run `database/schema.sql`, add the Supabase client, and replace the demo records with authenticated queries. Stripe and the admin extension workflow can then be connected to the `enrollments` and `access_events` tables.
